@@ -17,7 +17,7 @@ def get_notion_mcp() -> McpToolset :
     Create MCP toolset for using Notion MCP. This will be used for interaction with Notion.
     
     Pre-requisites: 
-    Meke sure to obtain Notion token from https://www.notion.so/profile/integrations and save it in .env
+    Make sure to obtain Notion token from https://www.notion.so/profile/integrations and save it in .env
     """
     notion_mcp = McpToolset(
         connection_params=StdioConnectionParams(
@@ -27,7 +27,8 @@ def get_notion_mcp() -> McpToolset :
                 env = {
                     "NOTION_TOKEN": notion_key
                 }
-            )
+            ),
+            timeout=30
         )
     )
     return notion_mcp

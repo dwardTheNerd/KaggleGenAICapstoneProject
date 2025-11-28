@@ -212,7 +212,7 @@ class PathfinderTUI(App):
             # Check if the response is *not* the specific error dictionary format.
             if not isinstance(response, dict) or "error" not in response:
                 # Add agent response to the conversation
-                conversation_box.mount(
+                await conversation_box.mount(
                     MessageBox(
                         response,
                         "answer"
@@ -223,7 +223,7 @@ class PathfinderTUI(App):
                 error_message = response["details"]["error_message"]
                 error_response = f"An error was encontered. Check the logs for more information.\n\nError code: {error_code}\nError message: {error_message}"
                 # Add error response to the conversation
-                conversation_box.mount(
+                await conversation_box.mount(
                     MessageBox(
                         error_response,
                         "answer"
