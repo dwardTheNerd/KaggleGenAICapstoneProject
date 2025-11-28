@@ -1,0 +1,115 @@
+Header {
+    dock: top;
+    background: #db814d;
+    text-style: bold;
+}
+
+Footer {
+    background: #e9cab7;
+}
+
+LoadingIndicator {
+    color: red;
+}
+
+#input_box {
+    dock: bottom;
+    height: auto;
+    width: 100%;
+    margin: 0 0 2 0;
+    align_horizontal: center;
+}
+
+#message_input {
+    width: 50%;
+    background: #343a40;
+}
+
+#send_button {
+    width: auto;
+}
+
+#conversation_box {
+    border: solid #4e4e4e;
+    scrollbar-visibility: visible;
+    scrollbar-color: #db814d;
+    scrollbar-color-active: #fc7419;
+    scrollbar-color-hover: #fc7419;
+    overflow-y: auto;
+}
+
+MessageBox {
+    layout: horizontal;
+    height: auto;
+    align-horizontal: center;
+}
+
+.message {
+    width: auto;
+    min-width: 25%;
+    border: tall black;
+    padding: 1 3;
+    margin: 1 0;
+    background: #343a40;
+}
+
+.question {
+    margin: 1 25 1 0;
+    background: #bce68d;
+}
+
+.answer {
+    margin: 1 0 1 25;
+    background: #f2ccb3;
+}
+
+.info {
+    width: auto;
+    text-align: center;
+    background: #f2ccb3;
+}
+
+QuestionScreen, UserIDScreen, TokenCountScreen {
+    align: center middle;
+}
+
+#question_dialog {
+    grid-size: 2;
+    grid-gutter: 1 2;
+    grid-rows: 1fr 3;
+    padding: 0 1;
+    width: 60;
+    height: 11;
+    border: thick $background 80%;
+    background: $surface;
+}
+
+#input_dialog {
+    grid-size: 2;
+    grid-gutter: 1 2;
+    grid-rows: 1fr 2fr 3;
+    padding: 0 1;
+    width: 60;
+    height: 11;
+    border: thick $background 80%;
+    background: $surface;
+}
+
+
+#modal_question {
+    column-span: 2;
+    height: 1fr;
+    width: 1fr;
+    content-align: center middle;
+}
+
+#modal_input {
+    column-span: 2;
+    height: 1fr;
+    width: 1fr;
+    content-align: center middle;
+}
+
+Button {
+    width: 100%;
+}

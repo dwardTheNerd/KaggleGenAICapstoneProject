@@ -1,0 +1,28 @@
+# Exclude .devcontainer
+.devcontainer
+
+# Exclude the environment file
+.env
+
+# Exclude other files that contain client secrets
+client_secret.json
+
+# Common Build Output and Artifacts
+/dist
+/build
+/out
+
+# IDE/Editor files
+.vscode/
+
+# Exclude all pycache folders
+**/__pycache__/
+
+# Exclude log files
+*.log
+
+# Exclude db files
+*.db
+
+# Exclude any sh scripts
+*.sh

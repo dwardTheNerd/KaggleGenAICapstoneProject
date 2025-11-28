@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pathfinder" 
+version = "0.1.0"
+description = "Google ADK agent with TUI app for interacting with agent."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiosqlite~=0.21.0",
+    "google-adk~=1.19.0",
+    "python-dotenv~=1.2.1",
+    "textual~=6.6.0"
+]
+
+[tool.hatch.build]
+include = ["pathfinder"]
+
+[project.scripts]
+pathfinder = "pathfinder.main:main"
