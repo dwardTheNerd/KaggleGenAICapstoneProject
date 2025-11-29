@@ -29,5 +29,6 @@ def get_obsidian_mcp() -> McpToolset:
             timeout=60
         )
     )
+    return obsidian_mcp
 
 obsidian_mcp_tool = get_obsidian_mcp()

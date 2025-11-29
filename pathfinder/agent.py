@@ -7,6 +7,7 @@ from google.genai import types
 from pathfinder.subagents.goal_planner import goal_planner_subagent
 from pathfinder.subagents.travel_planner import travel_planner_subagent
 from pathfinder.subagents.notion_agent import notion_subagent
+from pathfinder.subagents.obsidian_agent import obsidian_subagent
 from pathfinder.prompts import root_agent_instructions
 
 """
@@ -17,6 +18,7 @@ This is where the root_agent resides. The settings and tools used by the root_ag
 goal_planner_tool = AgentTool(goal_planner_subagent)
 travel_planner_tool = AgentTool(travel_planner_subagent)
 notion_agent_tool = AgentTool(notion_subagent)
+obsidian_subagent_tool = AgentTool(obsidian_subagent)
 
 # Defining retry options
 retry_config = types.HttpRetryOptions(
@@ -52,5 +54,5 @@ root_agent = Agent(
     name='root_agent',
     description='A helpful personal planning assistant for goals and travel itinerary',
     instruction=root_agent_instructions,
-    tools=[goal_planner_tool, travel_planner_tool, notion_agent_tool]
+    tools=[goal_planner_tool, travel_planner_tool, notion_agent_tool, obsidian_subagent_tool]
 )

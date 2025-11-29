@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import RotatingFileHandler
 import datetime
 from pathlib import Path
 from pathfinder.helpers.config_loader import load_config
@@ -33,7 +34,13 @@ def set_logging_options():
     log_filename = f"app_{current_date}.log"
     log_path = root_path / "logs" / log_filename
     log_path.parent.mkdir(parents=True, exist_ok=True)
-    file_handler = logging.FileHandler(log_path)
+
+    file_handler = RotatingFileHandler(
+        log_path,
+        maxBytes=100*1024*1024,
+        backupCount=5
+    )
+
     logging.basicConfig(
         level=level,
         format='%(asctime)s - %(levelname)s - %(name)s - %(message)s',
