@@ -19,11 +19,11 @@ def get_obsidian_mcp() -> McpToolset:
         connection_params=StdioConnectionParams(
             server_params = StdioServerParameters(
                 command = "uvx",
-                args = ["mcp-obsidian"],
+                args = ["-q", "--from", "https://github.com/MarkusPfundstein/mcp-obsidian.git", "mcp-obsidian"],
                 env = {
-                    "OBSIDIAN_API_KEY": obsidian_key,
-                    "OBSIDIAN_HOST": obsidian_host,
-                    "OBSIDIAN_PORT": obsidian_port
+                    "OBSIDIAN_API_KEY": f"{obsidian_key}",
+                    "OBSIDIAN_HOST": f"{obsidian_host}",
+                    "OBSIDIAN_PORT": f"{obsidian_port}"
                 }
             ),
             timeout=60
