@@ -1,5 +1,6 @@
 # Kaggle Gen AI Capstone Project - Project Pathfinder
 
+
 ## Introduction
 
 This is my submission for Kaggle's Capstone Project as part of the [5 Day Gen AI Intensive Course with Google](https://www.kaggle.com/learn-guide/5-day-genai).
@@ -56,7 +57,7 @@ source .venv/bin/activate
 
 3. Installing Dependencies
 
-Choose either options.
+Choose either options:
 
 **Option A: Using pip and requirements.txt:**
 
