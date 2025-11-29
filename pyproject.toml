@@ -7,7 +7,7 @@ name = "pathfinder"
 version = "0.1.0"
 description = "Google ADK agent with TUI app for interacting with agent."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "aiosqlite~=0.21.0",
     "google-adk~=1.19.0",
