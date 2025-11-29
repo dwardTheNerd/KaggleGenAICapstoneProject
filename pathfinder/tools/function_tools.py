@@ -1,32 +1,32 @@
-def split_text_into_chunks(content, max_chunk_size=1000) -> list[str]:
+from google.adk.tools.function_tool import FunctionTool
+from pathfinder.helpers.notion_helper import create_notion_page_from_md as md2notionpage
+from pathfinder.helpers.notion_helper import search_pages_by_title
+
+def create_notion_page(markdown_text, title, parent_page_id,):
     """
-    Splits text into multiple smaller chunks.
+    Create a notion page from markdown text
 
     Args:
-        content: This is the string containing the text to be split.
-        max_chunk_size: The maximum size of each chunk.
+        markdown_text: String of the markdown text content to be written to the new page.
+        title: Title for the new page.
+        parent_page_id: The ID of the parent page under which the new page will be created.
 
-    Returns:
-        List of strings, with each string represents a chunk of the broken content.
+    Return:
+        URL of the created page
     """
-    words = content.split()
-    chunks = []
-    current_chunk = []
+    return md2notionpage(markdown_text=markdown_text, title=title, parent_page_id=parent_page_id)
 
-    current_length = 0
-    for word in words:
-        # Check if adding this word would exceed the max_chunk_size
-        if current_length + len(word) + (1 if current_chunk else 0) > max_chunk_size:
-            # Join the current chunk of words and append to list
-            chunks.append(" ".join(current_chunk))
-            current_chunk = [word]
-            current_length = len(word)
-        else:
-            current_chunk.append(word)
-            current_length += len(word) + (1 if current_chunk[:-1] else 0)
+def search_notion_pages(query):
+    """
+    Perform a search by title for Notion pages
 
-    # Add any remaining words as last chunk
-    if current_chunk:
-        chunks.append(" ".join(current_chunk))
+    Args:
+        query: Search string to perform the search
+    
+    Return:
+        List of dict, with each dict containing basic page properties (id, object, title, url)
+    """
+    return search_pages_by_title(query)
 
-    return chunks
+create_notion_page_tool = FunctionTool(create_notion_page)
+search_notion_pages_by_title_tool = FunctionTool(search_notion_pages)

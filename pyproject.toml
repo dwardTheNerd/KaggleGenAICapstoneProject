@@ -12,7 +12,8 @@ dependencies = [
     "aiosqlite~=0.21.0",
     "google-adk~=1.19.0",
     "python-dotenv~=1.2.1",
-    "textual~=6.6.0"
+    "textual~=6.6.0",
+    "md2notionpage~=0.1.5"
 ]
 
 [tool.hatch.build]

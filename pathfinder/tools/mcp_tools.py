@@ -9,29 +9,25 @@ root_path = Path(__file__).resolve().parent.parent
 
 load_dotenv(root_path / '.env') 
 
-# Fetching Notion Token from .env
-notion_key = os.getenv('NOTION_TOKEN')
+# Fetching obsidian keys and other relevant info
+obsidian_key = os.getenv('OBSIDIAN_API_KEY')
+obsidian_host = os.getenv('OBSIDIAN_HOST')
+obsidian_port = os.getenv('OBSIDIAN_PORT')
 
-def get_notion_mcp() -> McpToolset :
-    """" 
-    Create MCP toolset for using Notion MCP. This will be used for interaction with Notion.
-    
-    Pre-requisites: 
-    Make sure to obtain Notion token from https://www.notion.so/profile/integrations and save it in .env
-    """
-    notion_mcp = McpToolset(
+def get_obsidian_mcp() -> McpToolset:
+    obsidian_mcp = McpToolset(
         connection_params=StdioConnectionParams(
             server_params = StdioServerParameters(
-                command = "npx",
-                args = ["-q", "-y", "@notionhq/notion-mcp-server"],
+                command = "uvx",
+                args = ["mcp-obsidian"],
                 env = {
-                    "NOTION_TOKEN": notion_key
+                    "OBSIDIAN_API_KEY": obsidian_key,
+                    "OBSIDIAN_HOST": obsidian_host,
+                    "OBSIDIAN_PORT": obsidian_port
                 }
             ),
             timeout=60
         )
     )
-    
-    return notion_mcp
 
-notion_mcp_tool = get_notion_mcp()
+obsidian_mcp_tool = get_obsidian_mcp()
