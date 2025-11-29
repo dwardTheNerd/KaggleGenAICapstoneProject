@@ -1,6 +1,5 @@
 # Kaggle Gen AI Capstone Project - Project Pathfinder
 
-
 ## Introduction
 
 This is my submission for Kaggle's Capstone Project as part of the [5 Day Gen AI Intensive Course with Google](https://www.kaggle.com/learn-guide/5-day-genai).
@@ -31,29 +30,29 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 1. Create a virtual environment in your working directory. If you do not have venv, you need to install it for the version of Python you are using.
 
-```
-python3 -m venv .venv
-```
+  ```
+  python3 -m venv .venv
+  ```
 
 2. Activate the Virtual Environment
 
 **macOS/Linux:**
 
-```
-source .venv/bin/activate
-```
+  ```
+  source .venv/bin/activate
+  ```
 
 **Windows (Command Prompt)**:
 
-```
-.venv\Scripts\activate.bat
-```
+  ```
+  .venv\Scripts\activate.bat
+  ```
 
 **Windows (PowerShell)**:
 
-```
-.venv\Scripts\Activate.ps1
-```
+  ```
+  .venv\Scripts\Activate.ps1
+  ```
 
 3. Installing Dependencies
 
