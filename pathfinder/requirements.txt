@@ -1,3 +1,4 @@
 google-adk~=1.19.0
 python-dotenv~=1.2.1
 textual~=6.6.0
+notion-client~=2.7.0
