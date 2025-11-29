@@ -28,9 +28,10 @@ def get_notion_mcp() -> McpToolset :
                     "NOTION_TOKEN": notion_key
                 }
             ),
-            timeout=30
+            timeout=60
         )
     )
+    
     return notion_mcp
 
 notion_mcp_tool = get_notion_mcp()

@@ -15,7 +15,7 @@ def create_goal_planner_agent() -> LlmAgent:
     )
 
     goal_planner_agent = LlmAgent(
-        model='gemini-2.5-flash',
+        model='gemini-2.5-flash-lite',
         name='goal_planner_agent',
         description='A professional goal planning assistant',
         instruction=goal_planner_instructions,

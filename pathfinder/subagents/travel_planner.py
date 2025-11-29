@@ -15,7 +15,7 @@ def create_travel_planner_agent() -> LlmAgent:
     )
     
     travel_planner_agent = LlmAgent(
-        model='gemini-2.5-flash',
+        model='gemini-2.5-flash-lite',
         name='travel_planner_agent',
         description='A professional travel planning assistant',
         instruction=travel_planner_instructions,

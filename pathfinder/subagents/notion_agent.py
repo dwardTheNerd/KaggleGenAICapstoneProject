@@ -13,7 +13,7 @@ def create_notion_agent() -> LlmAgent:
     notion_agent = LlmAgent(
         model='gemini-2.5-flash-lite',
         name='notion_agent',
-        description='Assist with creating Notion page.',
+        description='An intelligent agent that manages your Notion workspace using MCP tools to search, read, and create content.',
         instruction=notion_agent_instructions,
         tools=[notion_mcp_tool]
     )

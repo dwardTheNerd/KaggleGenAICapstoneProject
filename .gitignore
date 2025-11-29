@@ -26,3 +26,5 @@ client_secret.json
 
 # Exclude any sh scripts
 *.sh
+
+test.txt

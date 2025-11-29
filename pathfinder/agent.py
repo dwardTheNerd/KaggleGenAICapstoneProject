@@ -41,7 +41,7 @@ events_compact_config = EventsCompactionConfig(
 
 # Configure the model with retry options
 llm_model = Gemini(
-    model='gemini-2.5-flash',
+    model='gemini-2.5-flash-lite',
     retry_options=retry_config,
     events_compact_config=events_compact_config
 )

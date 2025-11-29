@@ -7,6 +7,7 @@ from google.adk.runners import Runner
 from google.genai.types import Content, Part
 from pathfinder.agent import root_agent
 from google.adk.plugins import ReflectAndRetryToolPlugin
+from pathfinder.plugins.tool_logging_plugin import ToolLoggingPlugin
 from pathfinder.plugins.token_tracking_plugin import TokenTrackingPlugin
 
 load_dotenv() 
@@ -40,7 +41,7 @@ class AgentController():
         self.runner = Runner(app=self.app, session_service=self.session_service)
 
     def create_app(self) -> App:
-        plugins = [ReflectAndRetryToolPlugin(max_retries=3), TokenTrackingPlugin()]
+        plugins = [ReflectAndRetryToolPlugin(max_retries=3), ToolLoggingPlugin(), TokenTrackingPlugin()]
 
         app = App(
             name=AgentController.APP_NAME,
