@@ -16,7 +16,7 @@ These are the primary capabilities of the agent:
 
 ### 1. Prerequisites
 
-Make sure you have at least [Python 3.10](https://www.python.org/downloads/) installed on your environment. This is important as Google ADK for Python requires Python 3.10 or higher to function properly.
+Make sure you have at least [Python 3.10](https://www.python.org/downloads/) installed on your environment. This is important as [Google ADK for Python v1.19.0](https://github.com/google/adk-python/releases/tag/v1.19.0) requires Python 3.10 or higher to function properly.
 
 ### 2. Clone repo
 
