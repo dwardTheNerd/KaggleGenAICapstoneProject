@@ -58,7 +58,7 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
   Choose either options:
 
-  **Option A: Using pip and requirements.txt:**
+  **Option A: Using pip and requirements.txt:
 
   ```
   pip install -r requirements.txt
@@ -73,15 +73,21 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 ## Obtaining API Keys
 
-### Google API Key ###
+### Google API Key
 
 Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
+#### 1. Go to AI Studio
+
 ![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys_1.png)
+
+#### 2. Create API Key
 
 ![Click Create API Key](docs/images/Google_AI_Studio_API_keys_2.png)
 
 ![Create new key](docs/images/Google_AI_Studio_API_keys_3.png)
+
+#### 3. Copy API Key
 
 ![Copy key](docs/images/Google_AI_Studio_API_keys_4.png)
 
