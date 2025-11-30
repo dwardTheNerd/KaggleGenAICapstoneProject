@@ -28,48 +28,49 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 ### 3. Setting up a Virtual Environment
 
-1. Create a virtual environment in your working directory. If you do not have venv, you need to install it for the version of Python you are using.
+#### 1. Create virtual environment
+Create a virtual environment in your working directory. If you do not have venv, you need to install it for the version of Python you are using.
 
+```bash
+python3 -m venv .venv
+```
+
+#### 2. Activate Virtual Environment
+
+**macOS/Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+**Windows (Command Prompt)**:
+
+```cmd
+.venv\Scripts\activate.bat
+```
+
+**Windows (PowerShell)**:
+
+```PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+#### 3. Installing Dependencies
+
+Choose either options:
+
+**Option A: Using pip and requirements.txt:**
+
+```bash
+pip install -r requirements.txt
   ```
-  python3 -m venv .venv
-  ```
 
-2. Activate the Virtual Environment
+**Option B: Using pip and Editable Install:**
 
-  **macOS/Linux:**
-
-  ```bash
-  source .venv/bin/activate
-  ```
-
-  **Windows (Command Prompt)**:
-
-  ```cmd
-  .venv\Scripts\activate.bat
-  ```
-
-  **Windows (PowerShell)**:
-
-  ```PowerShell
-  .venv\Scripts\Activate.ps1
-  ```
-
-3. Installing Dependencies
-
-  Choose either options:
-
-  **Option A: Using pip and requirements.txt:
-
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-  **Option B: Using pip and Editable Install:**
-
-  ```bash
-  pip install --upgrade pip
-  pip install -e .
-  ```
+```bash
+pip install --upgrade pip
+pip install -e .
+```
 
 ## Obtaining API Keys
 
@@ -167,11 +168,11 @@ For the agent to create notes in your local Obsidian vault, you need to install 
 
 ## Debugging
 
-The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to .log files under the logs folder.
+The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to `.log` files under the logs folder.
 
 For more visibility into the agents' operations, you can change the logging_level in `config.json`.
 
-Change logging_level to DEBUG:
+Change logging_level to *DEBUG*:
 
 ```json
 {
