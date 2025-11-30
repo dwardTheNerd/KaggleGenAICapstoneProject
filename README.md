@@ -96,7 +96,7 @@ Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
 [Notion](https://www.notion.com) is an all-in-one productivity and workspace app that combines note-taking, task management, project planning, and AI-powered tools into a single customizable platform.
 
-A Notion API key or token is required for the agent to create new Notion pages. Go to (https://www.notion.so/profile/integrations) to set up a new *internal* integration.
+A Notion API key or token is required for the agent to create new Notion pages. Go to (https://www.notion.so/profile/integrations) to set up a new **internal** integration.
 
 #### 1. Create internal integration
 
@@ -165,6 +165,12 @@ For the agent to create notes in your local Obsidian vault, you need to install 
   ```
 
   6. Save changes
+
+## Running the Project
+
+```bash
+python -m pathfinder.main
+```
 
 ## Debugging
 
