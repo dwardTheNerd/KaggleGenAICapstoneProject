@@ -81,12 +81,15 @@ Obtain API key from [Google AI Studio](https://aistudio.google.com/)
   ![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys_1.png)
 
 2. Click on *Create API key*
+
   ![Click Create API Key](docs/images/Google_AI_Studio_API_keys_2.png)
 
 3. Give a name to the key and select a project
+
   ![Create new key](docs/images/Google_AI_Studio_API_keys_3.png)
 
 4. Copy the API key
+
   ![Copy key](docs/images/Google_AI_Studio_API_keys_4.png)
 
 ### Notion Token ###
