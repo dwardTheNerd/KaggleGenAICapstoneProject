@@ -28,15 +28,8 @@ retry_config = types.HttpRetryOptions(
     http_status_codes=[429, 500, 503, 504],  # Retry on these HTTP errors
 )
 
-# Define the AI model to be used for summarization:
-summarization_llm = Gemini(model="gemini-2.5-flash")
-
-# Create the summarizer with the custom model:
-summarizer = LlmEventSummarizer(llm=summarization_llm)
-
 # Defining events compaction config
 events_compact_config = EventsCompactionConfig(
-    summarizer=summarizer,
     compaction_interval=3,
     overlap_size=1
 )

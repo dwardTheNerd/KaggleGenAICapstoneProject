@@ -68,7 +68,7 @@ class ToolLoggingPlugin(BasePlugin):
         self.logger.debug("****** End after_tool_callback ******")
         return None
 
-    def _format_args(self, args: dict[str, Any], max_length: int = 5000) -> str:
+    def _format_args(self, args: dict[str, Any], max_length: int = 10000) -> str:
         """Format arguments dictionary for logging."""
         if not args:
             return "{}"
