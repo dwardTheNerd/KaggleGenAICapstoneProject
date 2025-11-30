@@ -6,8 +6,7 @@ Header {
 }
 
 Footer {
-    background: #e9cab7;
-    color: black;
+    background: #974705ff;
 }
 
 LoadingIndicator {
