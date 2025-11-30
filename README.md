@@ -2,15 +2,33 @@
 
 ## Introduction
 
-This is my submission for Kaggle's Capstone Project as part of the [5 Day Gen AI Intensive Course with Google](https://www.kaggle.com/learn-guide/5-day-genai).
+This is my submission for Kaggle's Agents Intensive Capstone Project as part of the [5 Day Gen AI Intensive Course with Google](https://www.kaggle.com/learn-guide/5-day-genai).
 
-This project features a basic TUI chat interface that allows user to interact with an agent created with [Google ADK](https://google.github.io/adk-docs/).
+This project features a basic TUI chat interface that allows user to interact with a root agent created with [Google ADK](https://google.github.io/adk-docs/).
 
 These are the primary capabilities of the agent:
 
 1. Generate travel itinerary.
 2. Generate plans for achieving personal goals.
 3. Save generated plans to either Notion or local Obsidian vault.
+
+There is one root agent repsonsible for directly communuicating with users, and delegating the tasks to the appropriate sub-agents.
+
+**Sub-agent: Travel Planner agent**
+This agent is responsible for generating a travel itinerary. It will asks questions if necessary to generate a travel itinerary that fits the user's requirements. It is also responsible for handling any user requested changes to the itinerary.
+
+**Sub-agent: Goal Planner agent**
+This agent is used for generating plans to help user achieve specific goals. It will asks questions if necessary to generate a plan that fits the user's requirements. It is also responsible for handling any user requested changes to the plan.
+
+**Sub-agent: Notion agent**
+Once a plan has been approved, user can choose to upload the plan to a new page on their Notion workspace. This agent has two function tools: one for creating a new page with the plan, one for searching notes. To create a page on Notion, you need to place the page under an existing parent note. This can be done by providing the parent page ID to the agent, or by providing the title of the parent page.
+
+I originally tried to make this agent use the Notion MCP server. Setting up the agent to use the MCP server is easy. BUT, I have trouble making the agent create a new page and insert complex contents into the new page with the MCP server. Creating an empty page with simple contents work, but for more complex markdown contents, it rarely works.
+
+I have to switch to using md2notion and notion-client and expose functions for uploading markdown contents to new page and for searching pages. The agent is now able to complete the page creation operation more reliable since switching to using function tools.
+
+**Sub-agent: Obsidian agent**
+Once a plan has been approved, user can choose to upload the plan to a new note on their Obsidian vault. This agent is using a [McpToolset](https://google.github.io/adk-docs/tools-custom/mcp-tools/) for interacting with Obsidian MCP server.
 
 ## Environment Setup
 
@@ -190,3 +208,13 @@ Change logging_level to **DEBUG**:
   "logging_level": "DEBUG"
 }
 ```
+
+## Special Thanks
+
+I relied very heavily on the following resources while working on this project. I will like to give my appreciation to the authors of the following resources:
+
+- **Piotr Tobiasz** for his guide on [The Chaotic Engineer](https://chaoticengineer.hashnode.dev/textual-and-chatgpt) on how to create a chat interface in TUI.
+
+- **Guillaume Gelin** for his [notion-client](https://github.com/ramnes/notion-sdk-py) Python package. His project makes it so much easier to use Notion API.
+
+- **Marko Manninen** for his [md2notionpage](https://github.com/markomanninen/md2notion) Python package. Without the package, I likely will have to spend more time trying to figure out how to navigate around Notion's API and rate limits.
