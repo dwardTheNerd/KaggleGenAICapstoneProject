@@ -77,13 +77,13 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
-![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys1.png)
+![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys_1.png)
 
-![Click Create API Key](docs/images/Google_AI_Studio_API_keys2.png)
+![Click Create API Key](docs/images/Google_AI_Studio_API_keys_2.png)
 
-![Create new key](docs/images/Google_AI_Studio_API_keys3.png)
+![Create new key](docs/images/Google_AI_Studio_API_keys_3.png)
 
-![Copy key](docs/images/Google_AI_Studio_API_keys4.png)
+![Copy key](docs/images/Google_AI_Studio_API_keys_4.png)
 
 ### Notion Token ###
 
