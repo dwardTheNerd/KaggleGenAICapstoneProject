@@ -14,20 +14,24 @@ These are the primary capabilities of the agent:
 
 There is one root agent repsonsible for directly communuicating with users, and delegating the tasks to the appropriate sub-agents.
 
-**Sub-agent: Travel Planner agent**
+### Sub-agent: Travel Planner agent
+
 This agent is responsible for generating a travel itinerary. It will asks questions if necessary to generate a travel itinerary that fits the user's requirements. It is also responsible for handling any user requested changes to the itinerary.
 
-**Sub-agent: Goal Planner agent**
+### Sub-agent: Goal Planner agent
+
 This agent is used for generating plans to help user achieve specific goals. It will asks questions if necessary to generate a plan that fits the user's requirements. It is also responsible for handling any user requested changes to the plan.
 
-**Sub-agent: Notion agent**
+### Sub-agent: Notion agent
+
 Once a plan has been approved, user can choose to upload the plan to a new page on their Notion workspace. This agent has two function tools: one for creating a new page with the plan, one for searching notes. To create a page on Notion, you need to place the page under an existing parent note. This can be done by providing the parent page ID to the agent, or by providing the title of the parent page.
 
 I originally tried to make this agent use the Notion MCP server. Setting up the agent to use the MCP server is easy. BUT, I have trouble making the agent create a new page and insert complex contents into the new page with the MCP server. Creating an empty page with simple contents work, but for more complex markdown contents, it rarely works.
 
 I have to switch to using md2notion and notion-client and expose functions for uploading markdown contents to new page and for searching pages. The agent is now able to complete the page creation operation more reliable since switching to using function tools.
 
-**Sub-agent: Obsidian agent**
+### Sub-agent: Obsidian agent
+
 Once a plan has been approved, user can choose to upload the plan to a new note on their Obsidian vault. This agent is using a [McpToolset](https://google.github.io/adk-docs/tools-custom/mcp-tools/) for interacting with Obsidian MCP server.
 
 ## Environment Setup
