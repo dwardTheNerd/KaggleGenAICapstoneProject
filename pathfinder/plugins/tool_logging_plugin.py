@@ -42,6 +42,7 @@ class ToolLoggingPlugin(BasePlugin):
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
+        logger.propagate = False
 
         return logger
 
