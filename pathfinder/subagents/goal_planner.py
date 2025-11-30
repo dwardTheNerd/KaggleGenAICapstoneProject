@@ -1,6 +1,7 @@
 from google.adk.agents.llm_agent import LlmAgent
 from google.genai import types
 from google.adk.tools import google_search
+from pathfinder.helpers.config_manager import config
 from pathfinder.prompts import goal_planner_instructions
 
 def create_goal_planner_agent() -> LlmAgent:
@@ -15,12 +16,11 @@ def create_goal_planner_agent() -> LlmAgent:
     )
 
     goal_planner_agent = LlmAgent(
-        model='gemini-2.5-flash-lite',
+        model=config.goal_planner_model,
         name='goal_planner_agent',
         description='A professional goal planning assistant',
         instruction=goal_planner_instructions,
         generate_content_config=content_config,
-        output_key="current_plan",
         tools=[google_search]
     )
     return goal_planner_agent

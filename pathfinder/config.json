@@ -1,3 +1,10 @@
 {
-  "logging_level": "INFO"
+  "logging_level": "INFO",
+  "models": {
+    "root_agent": "gemini-2.5-flash-lite",
+    "travel_planner": "gemini-2.5-flash-lite",
+    "goal_planner": "gemini-2.5-flash-lite",
+    "notion_agent": "gemini-2.5-flash-lite",
+    "obsidian_agent": "gemini-2.5-flash-lite"
+  }
 }

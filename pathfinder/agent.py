@@ -4,6 +4,7 @@ from google.adk.models.google_llm import Gemini
 from google.adk.apps.app import EventsCompactionConfig
 from google.adk.apps.llm_event_summarizer import LlmEventSummarizer
 from google.genai import types
+from pathfinder.helpers.config_manager import config
 from pathfinder.subagents.goal_planner import goal_planner_subagent
 from pathfinder.subagents.travel_planner import travel_planner_subagent
 from pathfinder.subagents.notion_agent import notion_subagent
@@ -36,7 +37,7 @@ events_compact_config = EventsCompactionConfig(
 
 # Configure the model with retry options
 llm_model = Gemini(
-    model='gemini-2.5-flash-lite',
+    model=config.root_agent_model,
     retry_options=retry_config,
     events_compact_config=events_compact_config
 )

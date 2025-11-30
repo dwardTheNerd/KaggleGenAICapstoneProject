@@ -1,6 +1,7 @@
 from google.adk.agents.llm_agent import LlmAgent
 from google.genai import types
 from google.adk.tools import google_search
+from pathfinder.helpers.config_manager import config
 from pathfinder.prompts import travel_planner_instructions
 
 def create_travel_planner_agent() -> LlmAgent:
@@ -15,12 +16,11 @@ def create_travel_planner_agent() -> LlmAgent:
     )
     
     travel_planner_agent = LlmAgent(
-        model='gemini-2.5-flash-lite',
+        model=config.travel_planner_model,
         name='travel_planner_agent',
         description='A professional travel planning assistant',
         instruction=travel_planner_instructions,
         generate_content_config=content_config,
-        output_key="current_plan",
         tools=[google_search]
     )
     return travel_planner_agent

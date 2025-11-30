@@ -201,17 +201,40 @@ python3 -m pathfinder.main
 
 ![App TUI](docs/images/tui.png)
 
+## Configure Gemini Models for Agents
+
+You can set the Gemini model that the root agent and each sub-agent use in `pathfinder/config.json`.
+
+You can find a list of available Gemini models from here:
+(https://ai.google.dev/gemini-api/docs/models#model-variations)
+
+```json
+{
+  "logging_level": "INFO",
+  "models": {
+    "root_agent": "gemini-2.5-flash-lite",
+    "travel_planner": "gemini-2.5-flash-lite",
+    "goal_planner": "gemini-2.5-flash-lite",
+    "notion_agent": "gemini-2.5-flash-lite",
+    "obsidian_agent": "gemini-2.5-flash-lite"
+  }
+}
+```
+
 ## Debugging
 
-The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to `.log` files under the logs folder.
+Google ADK utilizes Python's logging package for collecting logs on agents' operations. Logs are configured to output to `.log` files under the `logs` folder.
 
-For more visibility into the agent's and sub-agents' operations, you can change the logging_level in `config.json`.
+For more visibility into the root agent's and sub-agents' operations, you can change the logging_level in `pathfinder/config.json`.
 
 Change logging_level to **DEBUG**:
 
 ```json
 {
-  "logging_level": "DEBUG"
+  "logging_level": "DEBUG",
+  "models": {
+    ...
+  }
 }
 ```
 

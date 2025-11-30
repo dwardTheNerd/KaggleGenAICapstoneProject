@@ -1,5 +1,6 @@
 from google.adk.agents.llm_agent import LlmAgent
 from google.genai import types
+from pathfinder.helpers.config_manager import config
 from pathfinder.tools.function_tools import create_notion_page_tool, search_notion_pages_by_title_tool
 from pathfinder.prompts import notion_agent_instructions
 
@@ -15,7 +16,7 @@ def create_notion_agent() -> LlmAgent:
     )
 
     notion_agent = LlmAgent(
-        model='gemini-2.5-flash-lite',
+        model=config.notion_agent_model,
         name='notion_agent',
         description='An helpful agent that helps to create and upload content to new Notion page.',
         instruction=notion_agent_instructions,

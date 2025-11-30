@@ -205,7 +205,6 @@ class PathfinderTUI(App):
             message_input.value = ""
 
         # Start session and begin chatting with agent
-        #await self.agent_controller.start_session(self.user_id)
         response = await self.agent_controller.call_agent(user_id=self.user_id, queries=user_input)
         
         if response:
