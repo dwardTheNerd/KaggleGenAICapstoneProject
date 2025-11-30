@@ -18,7 +18,7 @@ These are the primary capabilities of the agent:
 
 - Make sure you have at least [Python 3.10](https://www.python.org/downloads/) installed on your environment. This is important as [Google ADK for Python v1.19.0](https://github.com/google/adk-python/releases/tag/v1.19.0) requires Python 3.10 or higher to function properly.
 
-### 2. Clone repo
+### 2. Download
 
 Download the project to your working directory, or you can just use `git clone`.
 
@@ -181,9 +181,9 @@ python3 -m pathfinder.main
 
 The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to `.log` files under the logs folder.
 
-For more visibility into the agents' operations, you can change the logging_level in `config.json`.
+For more visibility into the agent's and sub-agents' operations, you can change the logging_level in `config.json`.
 
-Change logging_level to *DEBUG*:
+Change logging_level to **DEBUG**:
 
 ```json
 {
