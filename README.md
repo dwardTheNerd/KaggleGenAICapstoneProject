@@ -205,8 +205,9 @@ python3 -m pathfinder.main
 
 You can set the Gemini model that the root agent and each sub-agent use in `pathfinder/config.json`.
 
-You can find a list of available Gemini models from here:[https://ai.google.dev/gemini-api/docs/models#model-variations]
-(https://ai.google.dev/gemini-api/docs/models#model-variations)
+You can find a list of available Gemini models from here:
+
+[https://ai.google.dev/gemini-api/docs/models#model-variations](https://ai.google.dev/gemini-api/docs/models#model-variations)
 
 ```json
 {
