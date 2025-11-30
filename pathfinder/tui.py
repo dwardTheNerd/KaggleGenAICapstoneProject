@@ -5,8 +5,6 @@ from textual.screen import ModalScreen
 from textual.widget import Widget
 from pathfinder.agent_controller import AgentController
 
-# TUI implementation adapted from https://chaoticengineer.hashnode.dev/textual-and-chatgpt
-
 """
 This contains all the Textual widgets and main TUI app used for presenting a chat interface
 for user to interact with agent.
