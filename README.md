@@ -93,7 +93,27 @@ Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
 ### Notion Token ###
 
-A Notion API key or token is required for the agent to create new Notion pages.
+A Notion API key or token is required for the agent to create new Notion pages. Go to (https://www.notion.so/profile/integrations) to set up a new *internal* integration.
+
+#### 1. Create internal integration
+
+![Create internal integration](docs/images/Notion_create_integration_1.png)
+
+![Fill in internal integration details](docs/images/Notion_create_integration_2.png)
+
+#### 2. Copy secret from the integration's settings page
+
+![Copy secret](docs/images/Notion_copy_secret.png)
+
+#### 3. Configure Capabilities
+
+![Configure capabilities](docs/images/Notion_set_capabilities.png)
+
+#### 4. Configure Access
+
+![Configure capabilities](docs/images/Notion_set_access_1.png)
+
+![Configure capabilities](docs/images/Notion_set_access_2.png)
 
 ### Obsidian API KEY ###
 
