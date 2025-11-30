@@ -53,7 +53,7 @@ Planning rules: keep timings/logistics realistic; avoid unnecessary long transfe
 
 ## OUTPUT RULES ##
 
-**ALWAYS** respond in this markdown format:
+**ALWAYS** respond in this markdown format, **NOT** a summarized version:
 
    1. Trip Overview
       - Destination(s), dates, total duration.
