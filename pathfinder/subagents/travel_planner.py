@@ -11,7 +11,7 @@ def create_travel_planner_agent() -> LlmAgent:
     This agent will be exposed as a tool to the main agent.
     """
     content_config = types.GenerateContentConfig(
-        temperature=0.7
+        temperature=0.5
     )
     
     travel_planner_agent = LlmAgent(

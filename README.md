@@ -62,6 +62,7 @@ Choose either options:
 **Option A: Using pip and requirements.txt:**
 
 ```bash
+pip install --upgrade pip
 pip install -r requirements.txt
   ```
 
@@ -142,7 +143,7 @@ For the agent to create notes in your local Obsidian vault, you need to install 
 
 ## Configuration
 
-1. Rename `.env.example` to `.env`
+1. In pathfinder folder, rename `.env.example` to `.env`
 2. Open `.env`
 3. Provide GOOGLE_APY_KEY:
 
@@ -164,12 +165,16 @@ For the agent to create notes in your local Obsidian vault, you need to install 
   OBSIDIAN_PORT=PROVIDE OBSIDIAN_PORT
   ```
 
+  `OBSIDIAN_HOST` should be where you are running Obsidian.
+
   6. Save changes
 
 ## Running the Project
 
+To run the project, make sure you are in the **KaggleGenAICapstoneProject** folder and not in the pathfinder folder, then run the following:
+
 ```bash
-python -m pathfinder.main
+python3 -m pathfinder.main
 ```
 
 ## Debugging

@@ -12,6 +12,9 @@ client_secret.json
 /build
 /out
 
+# Excluding Python venv
+.venv/
+
 # IDE/Editor files
 .vscode/
 
