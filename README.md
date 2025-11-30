@@ -161,6 +161,20 @@ For the agent to create notes in your local Obsidian vault, you need to install 
   OBSIDIAN_API_KEY=PROVIDE OBSIDIAN_API_KEY HERE
   OBSIDIAN_HOST=PROVIDE OBSIDIAN_HOST
   OBSIDIAN_PORT=PROVIDE OBSIDIAN_PORT
-```
+  ```
 
-6. Save changes
+  6. Save changes
+
+## Debugging
+
+The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to .log files under the logs folder.
+
+For more visibility into the agents' operations, you can change the logging_level in `config.json`.
+
+Change logging_level to DEBUG:
+
+```json
+{
+  "logging_level": "DEBUG"
+}
+```
