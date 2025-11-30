@@ -38,19 +38,19 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
   **macOS/Linux:**
 
-  ```
+  ```bash
   source .venv/bin/activate
   ```
 
   **Windows (Command Prompt)**:
 
-  ```
+  ```cmd
   .venv\Scripts\activate.bat
   ```
 
   **Windows (PowerShell)**:
 
-  ```
+  ```PowerShell
   .venv\Scripts\Activate.ps1
   ```
 
@@ -60,13 +60,13 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
   **Option A: Using pip and requirements.txt:
 
-  ```
+  ```bash
   pip install -r requirements.txt
   ```
 
   **Option B: Using pip and Editable Install:**
 
-  ```
+  ```bash
   pip install --upgrade pip
   pip install -e .
   ```
@@ -93,6 +93,8 @@ Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
 ### Notion Token ###
 
+[Notion](https://www.notion.com) is an all-in-one productivity and workspace app that combines note-taking, task management, project planning, and AI-powered tools into a single customizable platform.
+
 A Notion API key or token is required for the agent to create new Notion pages. Go to (https://www.notion.so/profile/integrations) to set up a new *internal* integration.
 
 #### 1. Create internal integration
@@ -115,13 +117,50 @@ A Notion API key or token is required for the agent to create new Notion pages. 
 
 ![Configure capabilities](docs/images/Notion_set_access_2.png)
 
-### Obsidian API KEY ###
+### Obsidian API Key ###
+
+[Obsidian](https://obsidian.md/) is a popular note-taking and personal knowledge base tool.
+
+For the agent to create notes in your local Obsidian vault, you need to install and run the [Obsidian REST API community plugin](https://github.com/coddingtonbear/obsidian-local-rest-api).
+
+#### 1. Install REST API community plugin in Obsidian
+
+![Install REST API plugin](docs/images/Obsidian_install_REST_plugin.png)
+
+#### 2. Enable REST API community plugin
+
+![Enable plugin](docs/images/Obsidian_enable_REST_plugin.png)
+
+#### 4. Access REST API settings
+
+![Access REST API settings](docs/images/Obsidian_REST_settings.png)
+
+#### 5. Copy API Key and port number
+
+![Copy REST API key and port](docs/images/Obsidian_REST_copy_key.png)
 
 ## Configuration
 
 1. Rename `.env.example` to `.env`
-2. Open `.env` and provide GOOGLE_APY_KEY
+2. Open `.env`
+3. Provide GOOGLE_APY_KEY:
 
   ```
-  GOOGLE_API_KEY=<PROVIDE GOOGLE_API_KEY HERE>
+  GOOGLE_API_KEY=PROVIDE GOOGLE_API_KEY HERE
   ```
+
+4. Provide NOTION_TOKEN:
+
+  ```
+  NOTION_TOKEN=PROVIDE NOTION_TOKEN HERE
+  ```
+
+5. Provide OBSIDIAN_API_KEY, OBSIDIAN_HOST and OBSIDIAN_PORT:
+
+  ```
+  OBSIDIAN_API_KEY=PROVIDE OBSIDIAN_API_KEY HERE
+  OBSIDIAN_HOST=PROVIDE OBSIDIAN_HOST
+  OBSIDIAN_PORT=PROVIDE OBSIDIAN_PORT
+```
+
+6. Save changes
