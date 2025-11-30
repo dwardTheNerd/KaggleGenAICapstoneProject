@@ -199,6 +199,8 @@ To run the project, make sure you are in the **KaggleGenAICapstoneProject** fold
 python3 -m pathfinder.main
 ```
 
+![App TUI](docs/images/tui.png)
+
 ## Debugging
 
 The TUI application and Google ADK utilize Python's logging package for collecting logs. Logs are configured to output to `.log` files under the logs folder.
