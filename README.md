@@ -77,17 +77,21 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 Obtain API key from [Google AI Studio](https://aistudio.google.com/)
 
-![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys_1.png)
+1. Go to [Google AI Studio](https://aistudio.google.com/), select *API keys*
+  ![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys_1.png)
 
-![Click Create API Key](docs/images/Google_AI_Studio_API_keys_2.png)
+2. Click on *Create API key*
+  ![Click Create API Key](docs/images/Google_AI_Studio_API_keys_2.png)
 
-![Create new key](docs/images/Google_AI_Studio_API_keys_3.png)
+3. Give a name to the key and select a project
+  ![Create new key](docs/images/Google_AI_Studio_API_keys_3.png)
 
-![Copy key](docs/images/Google_AI_Studio_API_keys_4.png)
+4. Copy the API key
+  ![Copy key](docs/images/Google_AI_Studio_API_keys_4.png)
 
 ### Notion Token ###
 
-
+A Notion API key or token is required for the agent to create new Notion pages.
 
 ### Obsidian API KEY ###
 
