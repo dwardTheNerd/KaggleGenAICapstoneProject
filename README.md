@@ -16,7 +16,7 @@ These are the primary capabilities of the agent:
 
 ### 1. Prerequisites
 
-Make sure you have at least [Python 3.10](https://www.python.org/downloads/) installed on your environment. This is important as [Google ADK for Python v1.19.0](https://github.com/google/adk-python/releases/tag/v1.19.0) requires Python 3.10 or higher to function properly.
+- Make sure you have at least [Python 3.10](https://www.python.org/downloads/) installed on your environment. This is important as [Google ADK for Python v1.19.0](https://github.com/google/adk-python/releases/tag/v1.19.0) requires Python 3.10 or higher to function properly.
 
 ### 2. Clone repo
 
@@ -36,19 +36,19 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 2. Activate the Virtual Environment
 
-**macOS/Linux:**
+  **macOS/Linux:**
 
   ```
   source .venv/bin/activate
   ```
 
-**Windows (Command Prompt)**:
+  **Windows (Command Prompt)**:
 
   ```
   .venv\Scripts\activate.bat
   ```
 
-**Windows (PowerShell)**:
+  **Windows (PowerShell)**:
 
   ```
   .venv\Scripts\Activate.ps1
@@ -56,19 +56,46 @@ git clone https://github.com/dwardTheNerd/KaggleGenAICapstoneProject.git
 
 3. Installing Dependencies
 
-Choose either options:
+  Choose either options:
 
-**Option A: Using pip and requirements.txt:**
+  **Option A: Using pip and requirements.txt:**
 
-```
-pip install -r requirements.txt
-```
+  ```
+  pip install -r requirements.txt
+  ```
 
-**Option B: Using pip and Editable Install:**
+  **Option B: Using pip and Editable Install:**
 
-```
-pip install --upgrade pip
-pip install -e .
-```
+  ```
+  pip install --upgrade pip
+  pip install -e .
+  ```
 
-(work in progress)
+## Obtaining API Keys
+
+### Google API Key ###
+
+Obtain API key from [Google AI Studio](https://aistudio.google.com/)
+
+![Go to Google AI Studio](docs/images/Google_AI_Studio_API_keys1.png)
+
+![Click Create API Key](docs/images/Google_AI_Studio_API_keys2.png)
+
+![Create new key](docs/images/Google_AI_Studio_API_keys3.png)
+
+![Copy key](docs/images/Google_AI_Studio_API_keys4.png)
+
+### Notion Token ###
+
+
+
+### Obsidian API KEY ###
+
+## Configuration
+
+1. Rename `.env.example` to `.env`
+2. Open `.env` and provide GOOGLE_APY_KEY
+
+  ```
+  GOOGLE_API_KEY=<PROVIDE GOOGLE_API_KEY HERE>
+  ```
