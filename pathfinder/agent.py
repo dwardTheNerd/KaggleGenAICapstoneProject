@@ -1,8 +1,6 @@
 from google.adk.agents.llm_agent import Agent
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.models.google_llm import Gemini
-from google.adk.apps.app import EventsCompactionConfig
-from google.adk.apps.llm_event_summarizer import LlmEventSummarizer
 from google.genai import types
 from pathfinder.helpers.config_manager import config
 from pathfinder.subagents.goal_planner import goal_planner_subagent
@@ -29,17 +27,10 @@ retry_config = types.HttpRetryOptions(
     http_status_codes=[429, 500, 503, 504],  # Retry on these HTTP errors
 )
 
-# Defining events compaction config
-events_compact_config = EventsCompactionConfig(
-    compaction_interval=3,
-    overlap_size=1
-)
-
 # Configure the model with retry options
 llm_model = Gemini(
     model=config.root_agent_model,
-    retry_options=retry_config,
-    events_compact_config=events_compact_config
+    retry_options=retry_config
 )
 
 # Define root agent

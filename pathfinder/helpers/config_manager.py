@@ -23,6 +23,8 @@ class ConfigManager():
         self._goal_planner_model = ConfigManager.DEFAULT_MODEL
         self._notion_agent_model = ConfigManager.DEFAULT_MODEL
         self._obsidian_agent_model = ConfigManager.DEFAULT_MODEL
+
+        self._context_compact_config = None
         
         # Start loading config
         self.load_config(root_path / ConfigManager.CONFIG_FILE)
@@ -78,6 +80,9 @@ class ConfigManager():
                 if config["models"]["obsidian_agent"]:
                     self._obsidian_agent_model = config["models"]["obsidian_agent"]
 
+            if config["context_compaction"]:
+                self._context_compact_config = config["context_compaction"]
+
     @property
     def logging_level(self):
         return self._logging_level
@@ -101,5 +106,9 @@ class ConfigManager():
     @property
     def obsidian_agent_model(self):
         return self._obsidian_agent_model
+    
+    @property
+    def context_compact_config(self):
+        return self._context_compact_config
     
 config = ConfigManager()

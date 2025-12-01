@@ -6,5 +6,11 @@
     "goal_planner": "gemini-2.5-flash-lite",
     "notion_agent": "gemini-2.5-flash-lite",
     "obsidian_agent": "gemini-2.5-flash-lite"
+  },
+  "context_compaction": {
+    "enabled": true,
+    "compaction_interval": 5,
+    "overlap_size": 1,
+    "summarizer_model": "gemini-2.5-flash-lite"
   }
 }

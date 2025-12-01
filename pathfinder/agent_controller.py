@@ -1,14 +1,18 @@
 import logging
 from pathlib import Path
 from dotenv import load_dotenv
+from google.adk.models import Gemini
 from google.adk.apps.app import App
 from google.adk.sessions import Session, DatabaseSessionService
+from google.adk.apps.app import EventsCompactionConfig
+from google.adk.apps.llm_event_summarizer import LlmEventSummarizer
 from google.adk.runners import Runner
 from google.genai.types import Content, Part
 from pathfinder.agent import root_agent
 from google.adk.plugins import ReflectAndRetryToolPlugin
 from pathfinder.plugins.tool_logging_plugin import ToolLoggingPlugin
 from pathfinder.plugins.token_tracking_plugin import TokenTrackingPlugin
+from pathfinder.helpers.config_manager import config
 
 load_dotenv() 
 
@@ -43,10 +47,20 @@ class AgentController():
     def create_app(self) -> App:
         plugins = [ReflectAndRetryToolPlugin(max_retries=3), ToolLoggingPlugin(), TokenTrackingPlugin()]
 
+        # Check if context compaction is enabled in config.json
+        compaction_config = None
+        if config.context_compact_config and config.context_compact_config["enabled"]:
+            compaction_config = EventsCompactionConfig(
+                summarizer=LlmEventSummarizer(Gemini(model=config.context_compact_config["summarizer_model"])),
+                compaction_interval=config.context_compact_config["compaction_interval"],
+                overlap_size=config.context_compact_config["overlap_size"]
+            )
+
         app = App(
             name=AgentController.APP_NAME,
             root_agent=root_agent,
-            plugins=plugins
+            plugins=plugins,
+            events_compaction_config=compaction_config
         )
         return app
 
