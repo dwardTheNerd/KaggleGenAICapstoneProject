@@ -224,7 +224,11 @@ You can find a list of available Gemini models from here:
 
 ## Context Compaction
 
-Google ADK has [Context Compaction](https://google.github.io/adk-docs/context/compaction/) feature that uses a sliding window approach for collecting and summarizing agent workflow event data within a Session. You can use `pathfinder/config,json` to enable or disable this. Refer to [Context Compaction](https://google.github.io/adk-docs/context/compaction/) documentation on what each value does.
+Google ADK has [Context Compaction](https://google.github.io/adk-docs/context/compaction/) feature that uses a sliding window approach for collecting and summarizing agent workflow event data within a Session. 
+
+You can use `pathfinder/config.json` to enable or disable this. 
+
+Refer to [Context Compaction](https://google.github.io/adk-docs/context/compaction/) documentation on what each value does.
 
 ```json
 {
