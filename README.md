@@ -232,7 +232,7 @@ Refer to [Context Compaction](https://google.github.io/adk-docs/context/compacti
 
 ```json
 {
-   "context_compaction": {
+  "context_compaction": {
     "enabled": true,
     "compaction_interval": 5,
     "overlap_size": 1,
