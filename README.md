@@ -222,6 +222,21 @@ You can find a list of available Gemini models from here:
 }
 ```
 
+## Context Compaction
+
+Google ADK has [Context Compaction](https://google.github.io/adk-docs/context/compaction/) feature that uses a sliding window approach for collecting and summarizing agent workflow event data within a Session. You can use `pathfinder/config,json` to enable or disable this. Refer to [Context Compaction](https://google.github.io/adk-docs/context/compaction/) documentation on what each value does.
+
+```json
+{
+   "context_compaction": {
+    "enabled": true,
+    "compaction_interval": 5,
+    "overlap_size": 1,
+    "summarizer_model": "gemini-2.5-flash-lite"
+  }
+}
+```
+
 ## Debugging
 
 Google ADK utilizes Python's logging package for collecting logs on agents' operations. Logs are configured to output to `.log` files under the `logs` folder.
